@@ -1,4 +1,12 @@
 pipeline {
+ agent any
+stages{
+   stage("checkout"){
+     steps {
+           echo "Checkout done"
+      }
+   }
 
+} // end of stages
 
-}
+} // end of pipeline
