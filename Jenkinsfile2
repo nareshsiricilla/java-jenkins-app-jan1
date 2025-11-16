@@ -38,7 +38,7 @@ stage("Building the application"){
       }
    }
 
-   stage("Building the Docker Image"){
+   /*stage("Building the Docker Image"){
      steps {
          sh """
            echo "========Building the Docker Image ============"
@@ -59,11 +59,11 @@ stage("Building the application"){
                    '''
               }
         }
-     }
+     }*/
 
-     stage('Deploying on EC2 Minikube Cluster') {
+     stage('Connect to EC2 ') {
             steps {
-                     shagent(['ec2-ssh-key']) {
+                     sshagent(['ec2-ssh-key']) {
                        sh '''
                          EC2_HOST='65.0.100.41'
   
