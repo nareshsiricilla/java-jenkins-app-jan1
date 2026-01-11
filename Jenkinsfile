@@ -2,6 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                sh '''
+                    echo "Checkout done - $PWD"
+                    ls -l
+                '''
+            }
+        }
+
         stage('Build the application') {
             steps {
                 sh '''
